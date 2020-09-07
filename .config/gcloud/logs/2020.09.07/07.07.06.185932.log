@@ -1,0 +1,346 @@
+2020-09-07 07:07:06,189 DEBUG    root            Loaded Command Group: ['gcloud', 'builds']
+2020-09-07 07:07:06,228 DEBUG    root            Loaded Command Group: ['gcloud', 'builds', 'submit']
+2020-09-07 07:07:06,244 DEBUG    root            Running [gcloud.builds.submit] with arguments: [--config: "/tmp/16669", SOURCE: "."]
+2020-09-07 07:07:06,496 INFO     root            Not using ignore file.
+2020-09-07 07:07:06,497 INFO     ___FILE_ONLY___ Creating temporary tarball archive of 8 file(s) totalling 5.8 KiB before compression.
+
+2020-09-07 07:07:06,498 DEBUG    root            Added dir [.ipynb_checkpoints]
+2020-09-07 07:07:06,499 DEBUG    root            Added [Dockerfile]
+2020-09-07 07:07:06,499 DEBUG    root            Added [test_local.sh]
+2020-09-07 07:07:06,500 DEBUG    root            Added [train.sh]
+2020-09-07 07:07:06,500 DEBUG    root            Added [cloudbuild.yaml]
+2020-09-07 07:07:06,500 DEBUG    root            Added [hyperparam.yaml]
+2020-09-07 07:07:06,501 DEBUG    root            Added [.ipynb_checkpoints/train-checkpoint.sh]
+2020-09-07 07:07:06,501 DEBUG    root            Added [.ipynb_checkpoints/test_local-checkpoint.sh]
+2020-09-07 07:07:06,501 DEBUG    root            Added [.ipynb_checkpoints/hyperparam-checkpoint.yaml]
+2020-09-07 07:07:06,502 INFO     ___FILE_ONLY___ Uploading tarball of [.] to [gs://ind-coe_cloudbuild/source/1599462426.304893-03a68414be7f4b35b728262f5564073a.tgz]
+
+2020-09-07 07:07:06,504 INFO     root            Uploading [/tmp/tmpuivlfp2i/file.tgz] to [ind-coe_cloudbuild/source/1599462426.304893-03a68414be7f4b35b728262f5564073a.tgz]
+2020-09-07 07:07:06,622 DEBUG    root            submitting build: <Build
+ images: ['gcr.io/ind-coe/babyweight-pipeline-hypertrain:latest']
+ secrets: []
+ source: <Source
+ storageSource: <StorageSource
+ bucket: 'ind-coe_cloudbuild'
+ generation: 1599462426565443
+ object: 'source/1599462426.304893-03a68414be7f4b35b728262f5564073a.tgz'>>
+ steps: [<BuildStep
+ args: ['build', '-t', 'gcr.io/ind-coe/babyweight-pipeline-hypertrain:latest', '.']
+ env: []
+ name: 'gcr.io/cloud-builders/docker'
+ secretEnv: []
+ volumes: []
+ waitFor: []>]
+ tags: []>
+2020-09-07 07:07:08,056 INFO     ___FILE_ONLY___ Created [https://cloudbuild.googleapis.com/v1/projects/ind-coe/builds/a5e616ea-b9d1-4d10-a172-34f330901405].
+
+2020-09-07 07:07:08,056 INFO     ___FILE_ONLY___ Logs are available at [https://console.cloud.google.com/cloud-build/builds/a5e616ea-b9d1-4d10-a172-34f330901405?project=989493500108].
+
+2020-09-07 07:07:08,129 DEBUG    root            GCS logfile url is https://storage.googleapis.com/989493500108.cloudbuild-logs.googleusercontent.com/log-a5e616ea-b9d1-4d10-a172-34f330901405.txt
+2020-09-07 07:07:08,173 DEBUG    root            Reading GCS logfile: 404 (no log yet; keep polling)
+2020-09-07 07:07:09,254 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:10,394 DEBUG    root            Reading GCS logfile: 200 (read 195 bytes)
+2020-09-07 07:07:10,401 INFO     ___FILE_ONLY___ ----------------------------- REMOTE BUILD OUTPUT ------------------------------
+
+2020-09-07 07:07:10,401 INFO     ___FILE_ONLY___ starting build "a5e616ea-b9d1-4d10-a172-34f330901405"
+
+FETCHSOURCE
+Fetching storage object: gs://ind-coe_cloudbuild/source/1599462426.304893-03a68414be7f4b35b728262f5564073a.tgz#1599462426565443
+
+2020-09-07 07:07:11,472 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:12,542 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:13,617 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:14,736 DEBUG    root            Reading GCS logfile: 206 (read 359 bytes)
+2020-09-07 07:07:14,736 INFO     ___FILE_ONLY___ Copying gs://ind-coe_cloudbuild/source/1599462426.304893-03a68414be7f4b35b728262f5564073a.tgz#1599462426565443...
+/ [0 files][    0.0 B/  1.8 KiB]                                                / [1 files][  1.8 KiB/  1.8 KiB]                                                
+Operation completed over 1 objects/1.8 KiB.                                      
+
+2020-09-07 07:07:15,874 DEBUG    root            Reading GCS logfile: 206 (read 6 bytes)
+2020-09-07 07:07:15,874 INFO     ___FILE_ONLY___ BUILD
+
+2020-09-07 07:07:17,005 DEBUG    root            Reading GCS logfile: 206 (read 63 bytes)
+2020-09-07 07:07:17,005 INFO     ___FILE_ONLY___ Already have image (with digest): gcr.io/cloud-builders/docker
+
+2020-09-07 07:07:18,152 DEBUG    root            Reading GCS logfile: 206 (read 303 bytes)
+2020-09-07 07:07:18,152 INFO     ___FILE_ONLY___ Sending build context to Docker daemon  14.34kB
+Step 1/4 : FROM google/cloud-sdk:latest
+latest: Pulling from google/cloud-sdk
+d6ff36c9ec48: Already exists
+2776fabd227f: Pulling fs layer
+24a50b37e2b9: Pulling fs layer
+eb140ee09bc9: Pulling fs layer
+8851debbe9a9: Pulling fs layer
+8851debbe9a9: Waiting
+
+2020-09-07 07:07:19,296 DEBUG    root            Reading GCS logfile: 206 (read 130 bytes)
+2020-09-07 07:07:19,297 INFO     ___FILE_ONLY___ 2776fabd227f: Verifying Checksum
+2776fabd227f: Download complete
+8851debbe9a9: Verifying Checksum
+8851debbe9a9: Download complete
+
+2020-09-07 07:07:20,428 DEBUG    root            Reading GCS logfile: 206 (read 65 bytes)
+2020-09-07 07:07:20,429 INFO     ___FILE_ONLY___ eb140ee09bc9: Verifying Checksum
+eb140ee09bc9: Download complete
+
+2020-09-07 07:07:21,518 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:22,603 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:23,683 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:24,831 DEBUG    root            Reading GCS logfile: 206 (read 65 bytes)
+2020-09-07 07:07:24,832 INFO     ___FILE_ONLY___ 24a50b37e2b9: Verifying Checksum
+24a50b37e2b9: Download complete
+
+2020-09-07 07:07:25,914 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:26,999 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:28,083 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:29,219 DEBUG    root            Reading GCS logfile: 206 (read 28 bytes)
+2020-09-07 07:07:29,219 INFO     ___FILE_ONLY___ 2776fabd227f: Pull complete
+
+2020-09-07 07:07:30,307 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:31,399 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:32,501 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:33,597 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:34,706 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:35,786 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:36,874 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:37,955 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:39,040 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:40,122 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:41,209 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:42,288 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:43,377 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:44,451 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:45,532 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:46,617 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:47,689 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:48,776 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:49,852 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:50,933 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:52,015 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:53,099 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:54,177 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:55,276 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:56,354 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:57,436 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:58,520 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:07:59,601 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:00,682 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:01,770 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:02,861 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:03,942 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:05,029 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:06,112 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:07,191 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:08,285 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:09,389 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:10,465 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:11,542 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:12,622 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:13,699 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:14,772 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:15,858 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:16,944 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:18,066 DEBUG    root            Reading GCS logfile: 206 (read 28 bytes)
+2020-09-07 07:08:18,066 INFO     ___FILE_ONLY___ 24a50b37e2b9: Pull complete
+
+2020-09-07 07:08:19,141 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:20,223 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:21,298 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:22,389 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:23,517 DEBUG    root            Reading GCS logfile: 206 (read 358 bytes)
+2020-09-07 07:08:23,517 INFO     ___FILE_ONLY___ eb140ee09bc9: Pull complete
+8851debbe9a9: Pull complete
+Digest: sha256:2d9df7c2e2042c07ffe10af148ebe044297d6806b47a68535dc99ff8d62cd244
+Status: Downloaded newer image for google/cloud-sdk:latest
+ ---> 2905a2d9bc9c
+Step 2/4 : RUN mkdir -p /babyweight/src &&     cd /babyweight/src &&     git clone https://github.com/GoogleCloudPlatform/training-data-analyst
+
+2020-09-07 07:08:24,594 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:25,670 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:26,795 DEBUG    root            Reading GCS logfile: 206 (read 30 bytes)
+2020-09-07 07:08:26,796 INFO     ___FILE_ONLY___  ---> Running in bf5817d3234e
+
+2020-09-07 07:08:27,940 DEBUG    root            Reading GCS logfile: 206 (read 45 bytes)
+2020-09-07 07:08:27,940 INFO     ___FILE_ONLY___ [91mCloning into 'training-data-analyst'...
+
+2020-09-07 07:08:29,020 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:30,085 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:31,159 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:32,239 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:33,318 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:34,392 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:35,479 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:36,551 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:37,636 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:38,717 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:39,799 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:40,872 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:41,967 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:43,052 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:44,132 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:45,207 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:46,287 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:47,367 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:48,444 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:49,515 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:50,607 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:51,699 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:52,764 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:53,837 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:54,945 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:56,065 DEBUG    root            Reading GCS logfile: 206 (read 2013 bytes)
+2020-09-07 07:08:56,065 INFO     ___FILE_ONLY___ [0m[91mChecking out files:  64% (5151/7936)   [0m[91mChecking out files:  65% (5159/7936)   [0m[91mChecking out files:  66% (5238/7936)   [0m[91mChecking out files:  67% (5318/7936)   [0m[91mChecking out files:  68% (5397/7936)   [0m[91mChecking out files:  69% (5476/7936)   [0m[91mChecking out files:  70% (5556/7936)   [0m[91mChecking out files:  71% (5635/7936)   [0m[91mChecking out files:  72% (5714/7936)   [0m[91mChecking out files:  72% (5791/7936)   [0m[91mChecking out files:  73% (5794/7936)   [0m[91mChecking out files:  74% (5873/7936)   [0m[91mChecking out files:  75% (5952/7936)   [0m[91mChecking out files:  76% (6032/7936)   [0m[91mChecking out files:  77% (6111/7936)   [0m[91mChecking out files:  78% (6191/7936)   [0m[91mChecking out files:  79% (6270/7936)   [0m[91mChecking out files:  80% (6349/7936)   [0m[91mChecking out files:  81% (6429/7936)   [0m[91mChecking out files:  82% (6508/7936)   [0m[91mChecking out files:  83% (6587/7936)   [0m[91mChecking out files:  84% (6667/7936)   [0m[91mChecking out files:  85% (6746/7936)   [0m[91mChecking out files:  86% (6825/7936)   [0m[91mChecking out files:  87% (6905/7936)   [0m[91mChecking out files:  88% (6984/7936)   [0m[91mChecking out files:  89% (7064/7936)   [0m[91mChecking out files:  90% (7143/7936)   [0m[91mChecking out files:  91% (7222/7936)   [0m[91mChecking out files:  92% (7302/7936)   [0m[91mChecking out files:  93% (7381/7936)   [0m[91mChecking out files:  93% (7382/7936)   [0m[91mChecking out files:  94% (7460/7936)   [0m[91mChecking out files:  95% (7540/7936)   [0m[91mChecking out files:  96% (7619/7936)   [0m[91mChecking out files:  97% (7698/7936)   [0m[91mChecking out files:  98% (7778/7936)   [0m[91mChecking out files:  99% (7857/7936)   [0m[91mChecking out files:  99% (7869/7936)   [0m[91mChecking out files: 100% (7936/7936)   [0m[91mChecking out files: 100% (7936/7936), done.
+
+2020-09-07 07:08:57,154 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:58,227 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:08:59,312 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:00,407 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:01,497 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:02,581 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:03,668 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:04,746 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:05,824 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:06,905 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:07,984 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:09,069 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:10,144 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:11,217 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:12,335 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:13,401 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:14,478 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:15,551 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:16,620 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:17,760 DEBUG    root            Reading GCS logfile: 206 (read 441 bytes)
+2020-09-07 07:09:17,760 INFO     ___FILE_ONLY___ [0mRemoving intermediate container bf5817d3234e
+ ---> 5f54ee6d0ad4
+Step 3/4 : COPY train.sh hyperparam.yaml ./
+ ---> 4087bb248fea
+Step 4/4 : ENTRYPOINT ["bash", "./train.sh"]
+ ---> Running in 9c9c4a9f13b7
+Removing intermediate container 9c9c4a9f13b7
+ ---> e051f90922aa
+Successfully built e051f90922aa
+Successfully tagged gcr.io/ind-coe/babyweight-pipeline-hypertrain:latest
+PUSH
+Pushing gcr.io/ind-coe/babyweight-pipeline-hypertrain:latest
+
+2020-09-07 07:09:18,905 DEBUG    root            Reading GCS logfile: 206 (read 395 bytes)
+2020-09-07 07:09:18,905 INFO     ___FILE_ONLY___ The push refers to repository [gcr.io/ind-coe/babyweight-pipeline-hypertrain]
+6466e01f5518: Preparing
+e9a39118cd00: Preparing
+3e4761e28070: Preparing
+179e1fb85e6f: Preparing
+f4772f7ef852: Preparing
+d98ad8491f64: Preparing
+0ced13fcf944: Preparing
+d98ad8491f64: Waiting
+0ced13fcf944: Waiting
+f4772f7ef852: Layer already exists
+179e1fb85e6f: Layer already exists
+3e4761e28070: Layer already exists
+
+2020-09-07 07:09:19,979 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:21,113 DEBUG    root            Reading GCS logfile: 206 (read 70 bytes)
+2020-09-07 07:09:21,113 INFO     ___FILE_ONLY___ d98ad8491f64: Layer already exists
+0ced13fcf944: Layer already exists
+
+2020-09-07 07:09:22,193 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:23,325 DEBUG    root            Reading GCS logfile: 206 (read 21 bytes)
+2020-09-07 07:09:23,326 INFO     ___FILE_ONLY___ 6466e01f5518: Pushed
+
+2020-09-07 07:09:24,401 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:25,475 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:26,560 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:27,629 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:28,704 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:29,792 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:30,862 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:31,953 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:33,030 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:34,098 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:35,185 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:36,260 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:37,351 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:38,431 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:39,518 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:40,584 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:41,651 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:42,735 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:43,832 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:44,921 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:46,005 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:47,084 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:48,159 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:49,240 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:50,313 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:51,391 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:52,479 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:53,559 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:54,632 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:55,706 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:56,778 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:57,855 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:09:58,922 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:00,002 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:01,083 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:02,167 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:03,254 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:04,330 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:05,408 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:06,479 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:07,553 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:08,640 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:09,738 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:10,818 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:11,891 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:12,972 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:14,060 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:15,141 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:16,214 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:17,290 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:18,417 DEBUG    root            Reading GCS logfile: 206 (read 21 bytes)
+2020-09-07 07:10:18,417 INFO     ___FILE_ONLY___ e9a39118cd00: Pushed
+
+2020-09-07 07:10:19,548 DEBUG    root            Reading GCS logfile: 206 (read 104 bytes)
+2020-09-07 07:10:19,548 INFO     ___FILE_ONLY___ latest: digest: sha256:29b5ee73360e70f35c230b4846e9c66f0fad2457203173ab90f7437d03756380 size: 1794
+DONE
+
+2020-09-07 07:10:19,555 INFO     ___FILE_ONLY___ --------------------------------------------------------------------------------
+
+
+2020-09-07 07:10:19,557 INFO     root            Display format: "
+        table(
+          id,
+          createTime.date('%Y-%m-%dT%H:%M:%S%Oz', undefined='-'),
+          duration(start=startTime,end=finishTime,precision=0,calendar=false,undefined="  -").slice(2:).join(""):label=DURATION,
+          build_source(undefined="-"):label=SOURCE,
+          build_images(undefined="-"):label=IMAGES,
+          status
+        )
+      "
+2020-09-07 07:10:19,566 INFO     ___FILE_ONLY___ ID
+2020-09-07 07:10:19,566 INFO     ___FILE_ONLY___                                     
+2020-09-07 07:10:19,566 INFO     ___FILE_ONLY___ CREATE_TIME
+2020-09-07 07:10:19,566 INFO     ___FILE_ONLY___                 
+2020-09-07 07:10:19,566 INFO     ___FILE_ONLY___ DURATION
+2020-09-07 07:10:19,566 INFO     ___FILE_ONLY___   
+2020-09-07 07:10:19,566 INFO     ___FILE_ONLY___ SOURCE
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___                                                                                  
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___ IMAGES
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___                                                    
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___ STATUS
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___ 
+
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___ a5e616ea-b9d1-4d10-a172-34f330901405
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___   
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___ 2020-09-07T07:07:06+00:00
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___   
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___ 3M11S
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___      
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___ gs://ind-coe_cloudbuild/source/1599462426.304893-03a68414be7f4b35b728262f5564073a.tgz
+2020-09-07 07:10:19,567 INFO     ___FILE_ONLY___   
+2020-09-07 07:10:19,568 INFO     ___FILE_ONLY___ gcr.io/ind-coe/babyweight-pipeline-hypertrain (+1 more)
+2020-09-07 07:10:19,568 INFO     ___FILE_ONLY___   
+2020-09-07 07:10:19,568 INFO     ___FILE_ONLY___ SUCCESS
+2020-09-07 07:10:19,568 INFO     ___FILE_ONLY___ 
+
+2020-09-07 07:10:19,568 DEBUG    root            SDK update checks are disabled.

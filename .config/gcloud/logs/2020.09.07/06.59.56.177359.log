@@ -1,0 +1,265 @@
+2020-09-07 06:59:56,184 DEBUG    root            Loaded Command Group: ['gcloud', 'builds']
+2020-09-07 06:59:56,246 DEBUG    root            Loaded Command Group: ['gcloud', 'builds', 'submit']
+2020-09-07 06:59:56,269 DEBUG    root            Running [gcloud.builds.submit] with arguments: [--config: "/tmp/15080", SOURCE: "."]
+2020-09-07 06:59:56,541 INFO     root            Not using ignore file.
+2020-09-07 06:59:56,542 INFO     ___FILE_ONLY___ Creating temporary tarball archive of 7 file(s) totalling 11.3 KiB before compression.
+
+2020-09-07 06:59:56,543 DEBUG    root            Added dir [.ipynb_checkpoints]
+2020-09-07 06:59:56,544 DEBUG    root            Added [transform.py]
+2020-09-07 06:59:56,544 DEBUG    root            Added [Dockerfile]
+2020-09-07 06:59:56,544 DEBUG    root            Added [test_local.sh]
+2020-09-07 06:59:56,545 DEBUG    root            Added [cloudbuild.yaml]
+2020-09-07 06:59:56,545 DEBUG    root            Added [.ipynb_checkpoints/test_local-checkpoint.sh]
+2020-09-07 06:59:56,546 DEBUG    root            Added [.ipynb_checkpoints/transform-checkpoint.py]
+2020-09-07 06:59:56,546 DEBUG    root            Added [.ipynb_checkpoints/Dockerfile-checkpoint]
+2020-09-07 06:59:56,546 INFO     ___FILE_ONLY___ Uploading tarball of [.] to [gs://ind-coe_cloudbuild/source/1599461996.336255-2ce243004f3344578564ac69c7cb2844.tgz]
+
+2020-09-07 06:59:56,548 INFO     root            Uploading [/tmp/tmpvr9ga2il/file.tgz] to [ind-coe_cloudbuild/source/1599461996.336255-2ce243004f3344578564ac69c7cb2844.tgz]
+2020-09-07 06:59:56,826 DEBUG    root            submitting build: <Build
+ images: ['gcr.io/ind-coe/babyweight-pipeline-bqtocsv:latest']
+ secrets: []
+ source: <Source
+ storageSource: <StorageSource
+ bucket: 'ind-coe_cloudbuild'
+ generation: 1599461996631158
+ object: 'source/1599461996.336255-2ce243004f3344578564ac69c7cb2844.tgz'>>
+ steps: [<BuildStep
+ args: ['build', '-t', 'gcr.io/ind-coe/babyweight-pipeline-bqtocsv:latest', '.']
+ env: []
+ name: 'gcr.io/cloud-builders/docker'
+ secretEnv: []
+ volumes: []
+ waitFor: []>]
+ tags: []>
+2020-09-07 06:59:58,409 INFO     ___FILE_ONLY___ Created [https://cloudbuild.googleapis.com/v1/projects/ind-coe/builds/e4a45266-690a-482a-acfe-43e5ff4d9dd2].
+
+2020-09-07 06:59:58,409 INFO     ___FILE_ONLY___ Logs are available at [https://console.cloud.google.com/cloud-build/builds/e4a45266-690a-482a-acfe-43e5ff4d9dd2?project=989493500108].
+
+2020-09-07 06:59:58,498 DEBUG    root            GCS logfile url is https://storage.googleapis.com/989493500108.cloudbuild-logs.googleusercontent.com/log-e4a45266-690a-482a-acfe-43e5ff4d9dd2.txt
+2020-09-07 06:59:58,566 DEBUG    root            Reading GCS logfile: 404 (no log yet; keep polling)
+2020-09-07 06:59:59,696 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:00,804 DEBUG    root            Reading GCS logfile: 200 (read 195 bytes)
+2020-09-07 07:00:00,810 INFO     ___FILE_ONLY___ ----------------------------- REMOTE BUILD OUTPUT ------------------------------
+
+2020-09-07 07:00:00,825 INFO     ___FILE_ONLY___ starting build "e4a45266-690a-482a-acfe-43e5ff4d9dd2"
+
+FETCHSOURCE
+Fetching storage object: gs://ind-coe_cloudbuild/source/1599461996.336255-2ce243004f3344578564ac69c7cb2844.tgz#1599461996631158
+
+2020-09-07 07:00:01,935 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:03,085 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:04,181 DEBUG    root            Reading GCS logfile: 206 (read 114 bytes)
+2020-09-07 07:00:04,181 INFO     ___FILE_ONLY___ Copying gs://ind-coe_cloudbuild/source/1599461996.336255-2ce243004f3344578564ac69c7cb2844.tgz#1599461996631158...
+
+2020-09-07 07:00:05,321 DEBUG    root            Reading GCS logfile: 206 (read 245 bytes)
+2020-09-07 07:00:05,321 INFO     ___FILE_ONLY___ / [0 files][    0.0 B/  2.9 KiB]                                                / [1 files][  2.9 KiB/  2.9 KiB]                                                
+Operation completed over 1 objects/2.9 KiB.                                      
+
+2020-09-07 07:00:06,415 DEBUG    root            Reading GCS logfile: 206 (read 69 bytes)
+2020-09-07 07:00:06,415 INFO     ___FILE_ONLY___ BUILD
+Already have image (with digest): gcr.io/cloud-builders/docker
+
+2020-09-07 07:00:07,605 DEBUG    root            Reading GCS logfile: 206 (read 117 bytes)
+2020-09-07 07:00:07,606 INFO     ___FILE_ONLY___ Sending build context to Docker daemon  18.94kB
+Step 1/4 : FROM gcr.io/ml-pipeline/ml-pipeline-dataflow-tft:latest
+
+2020-09-07 07:00:08,766 DEBUG    root            Reading GCS logfile: 206 (read 888 bytes)
+2020-09-07 07:00:08,766 INFO     ___FILE_ONLY___ latest: Pulling from ml-pipeline/ml-pipeline-dataflow-tft
+3b37166ec614: Pulling fs layer
+504facff238f: Pulling fs layer
+ebbcacd28e10: Pulling fs layer
+c7fb3351ecad: Pulling fs layer
+2e3debadcbf7: Pulling fs layer
+98997fa40814: Pulling fs layer
+1fbd09e1efd0: Pulling fs layer
+3f66f2d83806: Pulling fs layer
+d65c50df810a: Pulling fs layer
+6c1aa423fcde: Pulling fs layer
+790e2974e2b6: Pulling fs layer
+44ded5e8c0c1: Pulling fs layer
+c7fb3351ecad: Waiting
+2e3debadcbf7: Waiting
+98997fa40814: Waiting
+1fbd09e1efd0: Waiting
+3f66f2d83806: Waiting
+d65c50df810a: Waiting
+6c1aa423fcde: Waiting
+790e2974e2b6: Waiting
+44ded5e8c0c1: Waiting
+504facff238f: Verifying Checksum
+504facff238f: Download complete
+ebbcacd28e10: Verifying Checksum
+ebbcacd28e10: Download complete
+c7fb3351ecad: Verifying Checksum
+c7fb3351ecad: Download complete
+2e3debadcbf7: Verifying Checksum
+2e3debadcbf7: Download complete
+
+2020-09-07 07:00:09,850 DEBUG    root            Reading GCS logfile: 206 (read 455 bytes)
+2020-09-07 07:00:09,851 INFO     ___FILE_ONLY___ 98997fa40814: Verifying Checksum
+98997fa40814: Download complete
+3b37166ec614: Verifying Checksum
+3b37166ec614: Download complete
+1fbd09e1efd0: Verifying Checksum
+1fbd09e1efd0: Download complete
+3f66f2d83806: Verifying Checksum
+3f66f2d83806: Download complete
+790e2974e2b6: Verifying Checksum
+790e2974e2b6: Download complete
+6c1aa423fcde: Verifying Checksum
+6c1aa423fcde: Download complete
+44ded5e8c0c1: Verifying Checksum
+44ded5e8c0c1: Download complete
+
+2020-09-07 07:00:10,953 DEBUG    root            Reading GCS logfile: 206 (read 65 bytes)
+2020-09-07 07:00:10,953 INFO     ___FILE_ONLY___ d65c50df810a: Verifying Checksum
+d65c50df810a: Download complete
+
+2020-09-07 07:00:12,089 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:13,214 DEBUG    root            Reading GCS logfile: 206 (read 112 bytes)
+2020-09-07 07:00:13,214 INFO     ___FILE_ONLY___ 3b37166ec614: Pull complete
+504facff238f: Pull complete
+ebbcacd28e10: Pull complete
+c7fb3351ecad: Pull complete
+
+2020-09-07 07:00:14,320 DEBUG    root            Reading GCS logfile: 206 (read 56 bytes)
+2020-09-07 07:00:14,320 INFO     ___FILE_ONLY___ 2e3debadcbf7: Pull complete
+98997fa40814: Pull complete
+
+2020-09-07 07:00:15,418 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:16,507 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:17,596 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:18,676 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:19,776 DEBUG    root            Reading GCS logfile: 206 (read 56 bytes)
+2020-09-07 07:00:19,777 INFO     ___FILE_ONLY___ 1fbd09e1efd0: Pull complete
+3f66f2d83806: Pull complete
+
+2020-09-07 07:00:20,957 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:22,036 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:23,122 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:24,218 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:25,296 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:26,368 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:27,475 DEBUG    root            Reading GCS logfile: 206 (read 28 bytes)
+2020-09-07 07:00:27,475 INFO     ___FILE_ONLY___ d65c50df810a: Pull complete
+
+2020-09-07 07:00:28,563 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:29,659 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:30,744 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:31,825 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:32,901 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:33,982 DEBUG    root            Reading GCS logfile: 206 (read 302 bytes)
+2020-09-07 07:00:33,982 INFO     ___FILE_ONLY___ 6c1aa423fcde: Pull complete
+790e2974e2b6: Pull complete
+44ded5e8c0c1: Pull complete
+Digest: sha256:c615955d9d9574694494e0b3a55ec73c4d474b98c4fb304badadaa4d695ebb58
+Status: Downloaded newer image for gcr.io/ml-pipeline/ml-pipeline-dataflow-tft:latest
+ ---> eb46be3cb8e5
+Step 2/4 : RUN mkdir /babyweight
+
+2020-09-07 07:00:35,056 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:36,135 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:37,224 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:00:38,332 DEBUG    root            Reading GCS logfile: 206 (read 30 bytes)
+2020-09-07 07:00:38,333 INFO     ___FILE_ONLY___  ---> Running in 6ae7323fbb7c
+
+2020-09-07 07:00:39,425 DEBUG    root            Reading GCS logfile: 206 (read 444 bytes)
+2020-09-07 07:00:39,425 INFO     ___FILE_ONLY___ Removing intermediate container 6ae7323fbb7c
+ ---> 3607c29f0076
+Step 3/4 : COPY transform.py /babyweight
+ ---> ba5fa9cdaeac
+Step 4/4 : ENTRYPOINT ["python", "/babyweight/transform.py"]
+ ---> Running in 81f11ac6d97a
+Removing intermediate container 81f11ac6d97a
+ ---> 87cd36194968
+Successfully built 87cd36194968
+Successfully tagged gcr.io/ind-coe/babyweight-pipeline-bqtocsv:latest
+PUSH
+Pushing gcr.io/ind-coe/babyweight-pipeline-bqtocsv:latest
+
+2020-09-07 07:00:40,520 DEBUG    root            Reading GCS logfile: 206 (read 1029 bytes)
+2020-09-07 07:00:40,520 INFO     ___FILE_ONLY___ The push refers to repository [gcr.io/ind-coe/babyweight-pipeline-bqtocsv]
+0feddc73c92b: Preparing
+a1d5d62b4ece: Preparing
+81da52a91801: Preparing
+184b078ad944: Preparing
+95cfc4ace381: Preparing
+9e895ac9a858: Preparing
+d7d5c03c274f: Preparing
+cbf6b010574e: Preparing
+0c2efa6fc71b: Preparing
+75b79e19929c: Preparing
+4775b2f378bb: Preparing
+883eafdbe580: Preparing
+19d043c86cbc: Preparing
+8823818c4748: Preparing
+9e895ac9a858: Waiting
+d7d5c03c274f: Waiting
+cbf6b010574e: Waiting
+0c2efa6fc71b: Waiting
+75b79e19929c: Waiting
+4775b2f378bb: Waiting
+883eafdbe580: Waiting
+19d043c86cbc: Waiting
+8823818c4748: Waiting
+184b078ad944: Layer already exists
+81da52a91801: Layer already exists
+95cfc4ace381: Layer already exists
+d7d5c03c274f: Layer already exists
+9e895ac9a858: Layer already exists
+cbf6b010574e: Layer already exists
+0c2efa6fc71b: Layer already exists
+75b79e19929c: Layer already exists
+4775b2f378bb: Layer already exists
+883eafdbe580: Layer already exists
+19d043c86cbc: Layer already exists
+8823818c4748: Layer already exists
+
+2020-09-07 07:00:41,621 DEBUG    root            Reading GCS logfile: 206 (read 42 bytes)
+2020-09-07 07:00:41,621 INFO     ___FILE_ONLY___ a1d5d62b4ece: Pushed
+0feddc73c92b: Pushed
+
+2020-09-07 07:00:42,734 DEBUG    root            Reading GCS logfile: 206 (read 104 bytes)
+2020-09-07 07:00:42,734 INFO     ___FILE_ONLY___ latest: digest: sha256:4cb97a38e0712f41edf534ec481bba8f5473f28b319feb13e46bbf6b9edb9f81 size: 3251
+DONE
+
+2020-09-07 07:00:42,740 INFO     ___FILE_ONLY___ --------------------------------------------------------------------------------
+
+
+2020-09-07 07:00:42,742 INFO     root            Display format: "
+        table(
+          id,
+          createTime.date('%Y-%m-%dT%H:%M:%S%Oz', undefined='-'),
+          duration(start=startTime,end=finishTime,precision=0,calendar=false,undefined="  -").slice(2:).join(""):label=DURATION,
+          build_source(undefined="-"):label=SOURCE,
+          build_images(undefined="-"):label=IMAGES,
+          status
+        )
+      "
+2020-09-07 07:00:42,751 INFO     ___FILE_ONLY___ ID
+2020-09-07 07:00:42,751 INFO     ___FILE_ONLY___                                     
+2020-09-07 07:00:42,751 INFO     ___FILE_ONLY___ CREATE_TIME
+2020-09-07 07:00:42,751 INFO     ___FILE_ONLY___                 
+2020-09-07 07:00:42,751 INFO     ___FILE_ONLY___ DURATION
+2020-09-07 07:00:42,751 INFO     ___FILE_ONLY___   
+2020-09-07 07:00:42,751 INFO     ___FILE_ONLY___ SOURCE
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___                                                                                  
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___ IMAGES
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___                                                 
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___ STATUS
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___ 
+
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___ e4a45266-690a-482a-acfe-43e5ff4d9dd2
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___   
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___ 2020-09-07T06:59:56+00:00
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___   
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___ 43S
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___        
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___ gs://ind-coe_cloudbuild/source/1599461996.336255-2ce243004f3344578564ac69c7cb2844.tgz
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___   
+2020-09-07 07:00:42,752 INFO     ___FILE_ONLY___ gcr.io/ind-coe/babyweight-pipeline-bqtocsv (+1 more)
+2020-09-07 07:00:42,753 INFO     ___FILE_ONLY___   
+2020-09-07 07:00:42,753 INFO     ___FILE_ONLY___ SUCCESS
+2020-09-07 07:00:42,753 INFO     ___FILE_ONLY___ 
+
+2020-09-07 07:00:42,753 DEBUG    root            SDK update checks are disabled.

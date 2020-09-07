@@ -1,0 +1,6 @@
+steps:
+    - name: 'gcr.io/cloud-builders/docker'
+      dir:  ''   # remove-for-manual
+      args: [ 'build', '-t', 'gcr.io/stately-planet-181816/babyweight-pipeline-traintuned:latest', '.' ]
+images:
+    - 'gcr.io/stately-planet-181816/babyweight-pipeline-traintuned:latest'

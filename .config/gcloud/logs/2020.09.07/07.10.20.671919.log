@@ -1,0 +1,674 @@
+2020-09-07 07:10:20,675 DEBUG    root            Loaded Command Group: ['gcloud', 'builds']
+2020-09-07 07:10:20,714 DEBUG    root            Loaded Command Group: ['gcloud', 'builds', 'submit']
+2020-09-07 07:10:20,730 DEBUG    root            Running [gcloud.builds.submit] with arguments: [--config: "/tmp/17356", SOURCE: "."]
+2020-09-07 07:10:20,966 INFO     root            Not using ignore file.
+2020-09-07 07:10:20,967 INFO     ___FILE_ONLY___ Creating temporary tarball archive of 13 file(s) totalling 26.0 KiB before compression.
+
+2020-09-07 07:10:20,968 DEBUG    root            Added dir [.ipynb_checkpoints]
+2020-09-07 07:10:20,968 DEBUG    root            Added dir [__pycache__]
+2020-09-07 07:10:20,969 DEBUG    root            Added [Dockerfile]
+2020-09-07 07:10:20,969 DEBUG    root            Added [requirements.txt]
+2020-09-07 07:10:20,970 DEBUG    root            Added [cloudrunapp.py]
+2020-09-07 07:10:20,970 DEBUG    root            Added [try_cloudfunction.sh]
+2020-09-07 07:10:20,971 DEBUG    root            Added [1_deploy_cloudrun.sh]
+2020-09-07 07:10:20,971 DEBUG    root            Added [cloudbuild.yaml]
+2020-09-07 07:10:20,971 DEBUG    root            Added [try_cloudrun.sh]
+2020-09-07 07:10:20,972 DEBUG    root            Added [main.py]
+2020-09-07 07:10:20,972 DEBUG    root            Added [2_deploy_cloudfunction.sh]
+2020-09-07 07:10:20,973 DEBUG    root            Added [mlp_babyweight.py]
+2020-09-07 07:10:20,973 DEBUG    root            Added [.ipynb_checkpoints/main-checkpoint.py]
+2020-09-07 07:10:20,973 DEBUG    root            Added [.ipynb_checkpoints/mlp_babyweight-checkpoint.py]
+2020-09-07 07:10:20,975 DEBUG    root            Added [__pycache__/mlp_babyweight.cpython-37.pyc]
+2020-09-07 07:10:20,975 INFO     ___FILE_ONLY___ Uploading tarball of [.] to [gs://ind-coe_cloudbuild/source/1599462620.787677-fc59fe081fe3468c933af98b8a998fbd.tgz]
+
+2020-09-07 07:10:20,977 INFO     root            Uploading [/tmp/tmp1h4f3_eq/file.tgz] to [ind-coe_cloudbuild/source/1599462620.787677-fc59fe081fe3468c933af98b8a998fbd.tgz]
+2020-09-07 07:10:21,089 DEBUG    root            submitting build: <Build
+ images: ['gcr.io/ind-coe/babyweight-pipeline-pipeline:latest']
+ secrets: []
+ source: <Source
+ storageSource: <StorageSource
+ bucket: 'ind-coe_cloudbuild'
+ generation: 1599462621034709
+ object: 'source/1599462620.787677-fc59fe081fe3468c933af98b8a998fbd.tgz'>>
+ steps: [<BuildStep
+ args: ['build', '-t', 'gcr.io/ind-coe/babyweight-pipeline-pipeline:latest', '.']
+ env: []
+ name: 'gcr.io/cloud-builders/docker'
+ secretEnv: []
+ volumes: []
+ waitFor: []>]
+ tags: []>
+2020-09-07 07:10:23,067 INFO     ___FILE_ONLY___ Created [https://cloudbuild.googleapis.com/v1/projects/ind-coe/builds/1b94b58a-249a-4452-90c1-c3f158afcdca].
+
+2020-09-07 07:10:23,067 INFO     ___FILE_ONLY___ Logs are available at [https://console.cloud.google.com/cloud-build/builds/1b94b58a-249a-4452-90c1-c3f158afcdca?project=989493500108].
+
+2020-09-07 07:10:23,136 DEBUG    root            GCS logfile url is https://storage.googleapis.com/989493500108.cloudbuild-logs.googleusercontent.com/log-1b94b58a-249a-4452-90c1-c3f158afcdca.txt
+2020-09-07 07:10:23,202 DEBUG    root            Reading GCS logfile: 404 (no log yet; keep polling)
+2020-09-07 07:10:24,283 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:25,377 DEBUG    root            Reading GCS logfile: 200 (read 195 bytes)
+2020-09-07 07:10:25,384 INFO     ___FILE_ONLY___ ----------------------------- REMOTE BUILD OUTPUT ------------------------------
+
+2020-09-07 07:10:25,384 INFO     ___FILE_ONLY___ starting build "1b94b58a-249a-4452-90c1-c3f158afcdca"
+
+FETCHSOURCE
+Fetching storage object: gs://ind-coe_cloudbuild/source/1599462620.787677-fc59fe081fe3468c933af98b8a998fbd.tgz#1599462621034709
+
+2020-09-07 07:10:26,464 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:27,553 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:28,634 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:29,731 DEBUG    root            Reading GCS logfile: 206 (read 359 bytes)
+2020-09-07 07:10:29,731 INFO     ___FILE_ONLY___ Copying gs://ind-coe_cloudbuild/source/1599462620.787677-fc59fe081fe3468c933af98b8a998fbd.tgz#1599462621034709...
+/ [0 files][    0.0 B/  6.6 KiB]                                                / [1 files][  6.6 KiB/  6.6 KiB]                                                
+Operation completed over 1 objects/6.6 KiB.                                      
+
+2020-09-07 07:10:30,818 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:31,931 DEBUG    root            Reading GCS logfile: 206 (read 69 bytes)
+2020-09-07 07:10:31,932 INFO     ___FILE_ONLY___ BUILD
+Already have image (with digest): gcr.io/cloud-builders/docker
+
+2020-09-07 07:10:33,034 DEBUG    root            Reading GCS logfile: 206 (read 78 bytes)
+2020-09-07 07:10:33,034 INFO     ___FILE_ONLY___ Sending build context to Docker daemon  38.91kB
+Step 1/11 : FROM python:3.8
+
+2020-09-07 07:10:34,134 DEBUG    root            Reading GCS logfile: 206 (read 608 bytes)
+2020-09-07 07:10:34,135 INFO     ___FILE_ONLY___ 3.8: Pulling from library/python
+d6ff36c9ec48: Already exists
+c958d65b3090: Already exists
+edaf0a6b092f: Already exists
+80931cf68816: Already exists
+7dc5581457b1: Pulling fs layer
+87013dc371d5: Pulling fs layer
+dbb5b2d86fe3: Pulling fs layer
+4cb6f1e38c2d: Pulling fs layer
+c2df8846f270: Pulling fs layer
+4cb6f1e38c2d: Waiting
+c2df8846f270: Waiting
+87013dc371d5: Verifying Checksum
+87013dc371d5: Download complete
+4cb6f1e38c2d: Verifying Checksum
+4cb6f1e38c2d: Download complete
+c2df8846f270: Verifying Checksum
+c2df8846f270: Download complete
+dbb5b2d86fe3: Verifying Checksum
+dbb5b2d86fe3: Download complete
+
+2020-09-07 07:10:35,212 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:36,301 DEBUG    root            Reading GCS logfile: 206 (read 65 bytes)
+2020-09-07 07:10:36,301 INFO     ___FILE_ONLY___ 7dc5581457b1: Verifying Checksum
+7dc5581457b1: Download complete
+
+2020-09-07 07:10:37,384 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:38,461 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:39,546 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:40,628 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:41,722 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:42,803 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:43,882 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:44,962 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:46,055 DEBUG    root            Reading GCS logfile: 206 (read 56 bytes)
+2020-09-07 07:10:46,055 INFO     ___FILE_ONLY___ 7dc5581457b1: Pull complete
+87013dc371d5: Pull complete
+
+2020-09-07 07:10:47,139 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:48,233 DEBUG    root            Reading GCS logfile: 206 (read 343 bytes)
+2020-09-07 07:10:48,234 INFO     ___FILE_ONLY___ dbb5b2d86fe3: Pull complete
+4cb6f1e38c2d: Pull complete
+c2df8846f270: Pull complete
+Digest: sha256:543da2fdfdc6e355563e2c2902da489294ddb07ed2183b8bf35934fb8fdef9b7
+Status: Downloaded newer image for python:3.8
+ ---> a7cda474cef4
+Step 2/11 : RUN apt-get update -y && apt-get install --no-install-recommends -y -q ca-certificates wget unzip git
+
+2020-09-07 07:10:49,306 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:50,392 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:10:51,490 DEBUG    root            Reading GCS logfile: 206 (read 30 bytes)
+2020-09-07 07:10:51,491 INFO     ___FILE_ONLY___  ---> Running in 78e03365dba2
+
+2020-09-07 07:10:52,610 DEBUG    root            Reading GCS logfile: 206 (read 308 bytes)
+2020-09-07 07:10:52,610 INFO     ___FILE_ONLY___ Get:1 http://security.debian.org/debian-security buster/updates InRelease [65.4 kB]
+Get:2 http://deb.debian.org/debian buster InRelease [122 kB]
+Get:3 http://deb.debian.org/debian buster-updates InRelease [51.9 kB]
+Get:4 http://security.debian.org/debian-security buster/updates/main amd64 Packages [226 kB]
+
+2020-09-07 07:10:53,694 DEBUG    root            Reading GCS logfile: 206 (read 151 bytes)
+2020-09-07 07:10:53,694 INFO     ___FILE_ONLY___ Get:5 http://deb.debian.org/debian buster/main amd64 Packages [7906 kB]
+Get:6 http://deb.debian.org/debian buster-updates/main amd64 Packages [7868 B]
+
+2020-09-07 07:10:54,866 DEBUG    root            Reading GCS logfile: 206 (read 34 bytes)
+2020-09-07 07:10:54,866 INFO     ___FILE_ONLY___ Fetched 8379 kB in 2s (3651 kB/s)
+
+2020-09-07 07:10:55,964 DEBUG    root            Reading GCS logfile: 206 (read 25 bytes)
+2020-09-07 07:10:55,964 INFO     ___FILE_ONLY___ Reading package lists...
+
+2020-09-07 07:10:57,058 DEBUG    root            Reading GCS logfile: 206 (read 82 bytes)
+2020-09-07 07:10:57,058 INFO     ___FILE_ONLY___ Reading package lists...
+Building dependency tree...
+Reading state information...
+
+2020-09-07 07:10:58,143 DEBUG    root            Reading GCS logfile: 206 (read 435 bytes)
+2020-09-07 07:10:58,143 INFO     ___FILE_ONLY___ git is already the newest version (1:2.20.1-2+deb10u3).
+unzip is already the newest version (6.0-23+deb10u1).
+wget is already the newest version (1.20.1-1.1).
+ca-certificates is already the newest version (20200601~deb10u1).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Removing intermediate container 78e03365dba2
+ ---> 26e9bb3ecff7
+Step 3/11 : RUN pip install google-api-python-client
+ ---> Running in e6b461c8ee11
+
+2020-09-07 07:10:59,227 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:00,301 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:01,398 DEBUG    root            Reading GCS logfile: 206 (read 1900 bytes)
+2020-09-07 07:11:01,398 INFO     ___FILE_ONLY___ Collecting google-api-python-client
+  Downloading google_api_python_client-1.11.0-py2.py3-none-any.whl (60 kB)
+Collecting six<2dev,>=1.6.1
+  Downloading six-1.15.0-py2.py3-none-any.whl (10 kB)
+Collecting google-auth>=1.16.0
+  Downloading google_auth-1.21.1-py2.py3-none-any.whl (93 kB)
+Collecting uritemplate<4dev,>=3.0.0
+  Downloading uritemplate-3.0.1-py2.py3-none-any.whl (15 kB)
+Collecting google-api-core<2dev,>=1.18.0
+  Downloading google_api_core-1.22.2-py2.py3-none-any.whl (91 kB)
+Collecting httplib2<1dev,>=0.9.2
+  Downloading httplib2-0.18.1-py3-none-any.whl (95 kB)
+Collecting google-auth-httplib2>=0.0.3
+  Downloading google_auth_httplib2-0.0.4-py2.py3-none-any.whl (9.1 kB)
+Collecting pyasn1-modules>=0.2.1
+  Downloading pyasn1_modules-0.2.8-py2.py3-none-any.whl (155 kB)
+Requirement already satisfied: setuptools>=40.3.0 in /usr/local/lib/python3.8/site-packages (from google-auth>=1.16.0->google-api-python-client) (50.0.1)
+Collecting rsa<5,>=3.1.4; python_version >= "3.5"
+  Downloading rsa-4.6-py3-none-any.whl (47 kB)
+Collecting cachetools<5.0,>=2.0.0
+  Downloading cachetools-4.1.1-py3-none-any.whl (10 kB)
+Collecting requests<3.0.0dev,>=2.18.0
+  Downloading requests-2.24.0-py2.py3-none-any.whl (61 kB)
+Collecting pytz
+  Downloading pytz-2020.1-py2.py3-none-any.whl (510 kB)
+Collecting googleapis-common-protos<2.0dev,>=1.6.0
+  Downloading googleapis_common_protos-1.52.0-py2.py3-none-any.whl (100 kB)
+Collecting protobuf>=3.12.0
+  Downloading protobuf-3.13.0-cp38-cp38-manylinux1_x86_64.whl (1.3 MB)
+Collecting pyasn1<0.5.0,>=0.4.6
+  Downloading pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+Collecting chardet<4,>=3.0.2
+  Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1
+  Downloading urllib3-1.25.10-py2.py3-none-any.whl (127 kB)
+Collecting certifi>=2017.4.17
+  Downloading certifi-2020.6.20-py2.py3-none-any.whl (156 kB)
+
+2020-09-07 07:11:02,492 DEBUG    root            Reading GCS logfile: 206 (read 339 bytes)
+2020-09-07 07:11:02,492 INFO     ___FILE_ONLY___ Collecting idna<3,>=2.5
+  Downloading idna-2.10-py2.py3-none-any.whl (58 kB)
+Installing collected packages: six, pyasn1, pyasn1-modules, rsa, cachetools, google-auth, uritemplate, chardet, urllib3, certifi, idna, requests, pytz, protobuf, googleapis-common-protos, google-api-core, httplib2, google-auth-httplib2, google-api-python-client
+
+2020-09-07 07:11:03,564 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:04,646 DEBUG    root            Reading GCS logfile: 206 (read 362 bytes)
+2020-09-07 07:11:04,646 INFO     ___FILE_ONLY___ Successfully installed cachetools-4.1.1 certifi-2020.6.20 chardet-3.0.4 google-api-core-1.22.2 google-api-python-client-1.11.0 google-auth-1.21.1 google-auth-httplib2-0.0.4 googleapis-common-protos-1.52.0 httplib2-0.18.1 idna-2.10 protobuf-3.13.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 pytz-2020.1 requests-2.24.0 rsa-4.6 six-1.15.0 uritemplate-3.0.1 urllib3-1.25.10
+
+2020-09-07 07:11:05,725 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:06,806 DEBUG    root            Reading GCS logfile: 206 (read 676 bytes)
+2020-09-07 07:11:06,806 INFO     ___FILE_ONLY___ Removing intermediate container e6b461c8ee11
+ ---> 607ad1b64c58
+Step 4/11 : RUN cd / &&     wget -nv https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.zip &&     unzip -qq google-cloud-sdk.zip -d tools &&     rm google-cloud-sdk.zip &&     tools/google-cloud-sdk/install.sh --usage-reporting=false         --path-update=false --bash-completion=false         --disable-installation-options &&     tools/google-cloud-sdk/bin/gcloud -q components update         gcloud core gsutil &&     tools/google-cloud-sdk/bin/gcloud config set component_manager/disable_update_check true &&     touch /tools/google-cloud-sdk/lib/third_party/google.py
+ ---> Running in bab382c34ed0
+
+2020-09-07 07:11:07,895 DEBUG    root            Reading GCS logfile: 206 (read 142 bytes)
+2020-09-07 07:11:07,895 INFO     ___FILE_ONLY___ [91m2020-09-07 07:11:06 URL:https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.zip [34042511/34042511] -> "google-cloud-sdk.zip" [1]
+
+2020-09-07 07:11:08,975 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:10,055 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:11,145 DEBUG    root            Reading GCS logfile: 206 (read 179 bytes)
+2020-09-07 07:11:11,145 INFO     ___FILE_ONLY___ [0mWelcome to the Google Cloud SDK!
+WARNING: You appear to be running this script as root. This may cause 
+the installation to be inaccessible to users other than the root user.
+
+2020-09-07 07:11:12,233 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:13,325 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:14,403 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:15,489 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:16,566 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:17,650 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:18,724 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:19,801 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:20,883 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:21,959 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:23,085 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:24,204 DEBUG    root            Reading GCS logfile: 206 (read 3427 bytes)
+2020-09-07 07:11:24,204 INFO     ___FILE_ONLY___ [91m
+[0m[91m
+Your current Cloud SDK version is: 308.0.0
+[0m[91mInstalling components from version: 308.0.0
+[0m[91m
+[0m[91m┌─────────────────────────────────────────────────────────────────────────────┐[0m[91m
+[0m[91m│                     These components will be installed.                     │[0m[91m
+[0m[91m├─────────────────────────────────────────────────────┬────────────┬──────────┤[0m[91m
+[0m[91m│                         Name                        │  Version   │   Size   │[0m[91m
+[0m[91m├─────────────────────────────────────────────────────┼────────────┼──────────┤[0m[91m
+[0m[91m│ [0m[91mBigQuery Command Line Tool                         [0m[91m [0m[91m│ [0m[91m    2.0.60[0m[91m [0m[91m│ [0m[91m < 1 MiB[0m[91m [0m[91m│[0m[91m
+[0m[91m│ [0m[91mBigQuery Command Line Tool (Platform Specific)     [0m[91m [0m[91m│ [0m[91m    2.0.58[0m[91m [0m[91m│ [0m[91m < 1 MiB[0m[91m [0m[91m│[0m[91m
+[0m[91m│ [0m[91mCloud SDK Core Libraries (Platform Specific)       [0m[91m [0m[91m│ [0m[91m2020.07.10[0m[91m [0m[91m│ [0m[91m < 1 MiB[0m[91m [0m[91m│[0m[91m
+[0m[91m│ [0m[91mCloud Storage Command Line Tool                    [0m[91m [0m[91m│ [0m[91m      4.53[0m[91m [0m[91m│ [0m[91m 3.5 MiB[0m[91m [0m[91m│[0m[91m
+[0m[91m│ [0m[91mCloud Storage Command Line Tool (Platform Specific)[0m[91m [0m[91m│ [0m[91m      4.51[0m[91m [0m[91m│ [0m[91m < 1 MiB[0m[91m [0m[91m│[0m[91m
+[0m[91m│ [0m[91mDefault set of gcloud commands                     [0m[91m [0m[91m│ [0m[91m          [0m[91m [0m[91m│ [0m[91m        [0m[91m [0m[91m│[0m[91m
+[0m[91m│ [0m[91manthoscli                                          [0m[91m [0m[91m│ [0m[91m     0.2.7[0m[91m [0m[91m│ [0m[91m51.7 MiB[0m[91m [0m[91m│[0m[91m
+[0m[91m│ [0m[91manthoscli                                          [0m[91m [0m[91m│ [0m[91m     0.2.7[0m[91m [0m[91m│ [0m[91m        [0m[91m [0m[91m│[0m[91m
+[0m[91m│ [0m[91mgcloud cli dependencies                            [0m[91m [0m[91m│ [0m[91m2020.06.12[0m[91m [0m[91m│ [0m[91m < 1 MiB[0m[91m [0m[91m│[0m[91m
+[0m[91m└─────────────────────────────────────────────────────┴────────────┴──────────┘[0m[91m
+[0m[91m
+[0m[91mFor the latest full release notes, please visit:
+  https://cloud.google.com/sdk/release_notes
+
+[0m[91m╔════════════════════════════════════════════════════════════╗
+[0m[91m╠═ Creating update staging area                             ═╣
+
+2020-09-07 07:11:25,279 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:26,360 DEBUG    root            Reading GCS logfile: 206 (read 3650 bytes)
+2020-09-07 07:11:26,360 INFO     ___FILE_ONLY___ [0m[91m╚[0m[91m══════[0m[91m══════[0m[91m══════[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m╝
+[0m[91m╔════════════════════════════════════════════════════════════╗
+[0m[91m╠═ Installing: BigQuery Command Line Tool                   ═╣
+[0m[91m╚[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m╝
+[0m[91m╔════════════════════════════════════════════════════════════╗
+[0m[91m╠═ Installing: BigQuery Command Line Tool (Platform Spec... ═╣
+[0m[91m╚[0m[91m══════════════════════════════[0m[91m══════════════════════════════[0m[91m╝
+[0m[91m╔════════════════════════════════════════════════════════════╗
+[0m[91m╠═ Installing: Cloud SDK Core Libraries (Platform Specific) ═╣
+[0m[91m╚[0m[91m══════════════════════════════[0m[91m═══════════════[0m[91m═══════════════[0m[91m╝
+[0m[91m╔════════════════════════════════════════════════════════════╗
+[0m[91m╠═ Installing: Cloud Storage Command Line Tool              ═╣
+[0m[91m╚[0m[91m═[0m[91m══[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m╝
+
+2020-09-07 07:11:27,454 DEBUG    root            Reading GCS logfile: 206 (read 1247 bytes)
+2020-09-07 07:11:27,454 INFO     ___FILE_ONLY___ [0m[91m╔════════════════════════════════════════════════════════════╗
+╠═ Installing: Cloud Storage Command Line Tool (Platform... ═╣
+╚[0m[91m══════════════════════════════[0m[91m══════════════════════════════[0m[91m╝
+[0m[91m╔════════════════════════════════════════════════════════════╗
+[0m[91m╠═ Installing: Default set of gcloud commands               ═╣
+[0m[91m╚[0m[91m════════════════════════════════════════════════════════════[0m[91m╝
+[0m[91m╔════════════════════════════════════════════════════════════╗
+[0m[91m╠═ Installing: anthoscli                                    ═╣
+
+2020-09-07 07:11:28,538 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:29,724 DEBUG    root            Reading GCS logfile: 206 (read 2036 bytes)
+2020-09-07 07:11:29,724 INFO     ___FILE_ONLY___ [0m[91m╚[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m═[0m[91m══════════[0m[91m═════════[0m[91m═══════════[0m[91m╝
+[0m[91m╔════════════════════════════════════════════════════════════╗
+[0m[91m╠═ Installing: anthoscli                                    ═╣
+[0m[91m╚[0m[91m════════════════════════════════════════════════════════════[0m[91m╝
+[0m[91m╔════════════════════════════════════════════════════════════╗
+[0m[91m╠═ Installing: gcloud cli dependencies                      ═╣
+[0m[91m╚[0m[91m══════════════════════════════[0m[91m══════[0m[91m══════[0m[91m══════[0m[91m══════[0m[91m══════[0m[91m╝
+[0m[91m╔════════════════════════════════════════════════════════════╗
+[0m[91m╠═ Creating backup and activating new installation          ═╣
+[0m[91m╚[0m[91m══════════════════════════════[0m[91m══════════════════════════════[0m[91m╝
+[0m[91m
+
+2020-09-07 07:11:30,799 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:31,879 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:32,969 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:34,047 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:35,130 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:36,206 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:37,287 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:38,373 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:39,503 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:40,595 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:41,665 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:42,743 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:43,824 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:44,911 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:46,039 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:47,123 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:48,225 DEBUG    root            Reading GCS logfile: 206 (read 649 bytes)
+2020-09-07 07:11:48,225 INFO     ___FILE_ONLY___ [0m[91mPerforming post processing steps...
+.....................................................................done.
+
+Update done!
+
+[0m
+This will install all the core command line tools necessary for working with
+the Google Cloud Platform.
+
+==> Source [/tools/google-cloud-sdk/completion.bash.inc] in your profile to enable shell command completion for gcloud.
+==> Source [/tools/google-cloud-sdk/path.bash.inc] in your profile to add the Google Cloud SDK command line tools to your $PATH.
+
+For more information on how to get started, please visit:
+  https://cloud.google.com/sdk/docs/quickstarts
+
+
+[91m
+[0m[91mAll components are up to date.
+
+2020-09-07 07:11:49,323 DEBUG    root            Reading GCS logfile: 206 (read 68 bytes)
+2020-09-07 07:11:49,323 INFO     ___FILE_ONLY___ [0m[91mUpdated property [component_manager/disable_update_check].
+
+2020-09-07 07:11:50,402 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:51,498 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:52,574 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:53,657 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:54,740 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:55,819 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:56,902 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:58,059 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:11:59,138 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:00,223 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:01,306 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:02,382 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:03,460 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:04,547 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:05,646 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:06,721 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:07,804 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:08,886 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:09,960 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:11,048 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:12,118 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:13,217 DEBUG    root            Reading GCS logfile: 206 (read 270 bytes)
+2020-09-07 07:12:13,217 INFO     ___FILE_ONLY___ [0mRemoving intermediate container bab382c34ed0
+ ---> 96b1cfdfee41
+Step 5/11 : ENV PATH $PATH:/tools/node/bin:/tools/google-cloud-sdk/bin
+ ---> Running in cb8615bc4ec5
+Removing intermediate container cb8615bc4ec5
+ ---> ef8611da517e
+Step 6/11 : COPY requirements.txt ./
+
+2020-09-07 07:12:14,332 DEBUG    root            Reading GCS logfile: 206 (read 415 bytes)
+2020-09-07 07:12:14,332 INFO     ___FILE_ONLY___  ---> fecf0e039d9d
+Step 7/11 : RUN pip install -r requirements.txt
+ ---> Running in 589a90e44859
+Collecting Flask==1.1.1
+  Downloading Flask-1.1.1-py2.py3-none-any.whl (94 kB)
+Collecting python_version>"3.0"
+  Downloading python_version-0.0.2-py2.py3-none-any.whl (3.4 kB)
+Collecting gunicorn==20.0.4
+  Downloading gunicorn-20.0.4-py2.py3-none-any.whl (77 kB)
+Collecting kfp
+  Downloading kfp-1.0.0.tar.gz (116 kB)
+
+2020-09-07 07:12:15,424 DEBUG    root            Reading GCS logfile: 206 (read 678 bytes)
+2020-09-07 07:12:15,424 INFO     ___FILE_ONLY___ Requirement already satisfied: requests in /usr/local/lib/python3.8/site-packages (from -r requirements.txt (line 5)) (2.24.0)
+Collecting itsdangerous>=0.24
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting Werkzeug>=0.15
+  Downloading Werkzeug-1.0.1-py2.py3-none-any.whl (298 kB)
+Collecting Jinja2>=2.10.1
+  Downloading Jinja2-2.11.2-py2.py3-none-any.whl (125 kB)
+Collecting click>=5.1
+  Downloading click-7.1.2-py2.py3-none-any.whl (82 kB)
+Requirement already satisfied: setuptools>=3.0 in /usr/local/lib/python3.8/site-packages (from gunicorn==20.0.4->-r requirements.txt (line 3)) (50.0.1)
+Collecting PyYAML
+  Downloading PyYAML-5.3.1.tar.gz (269 kB)
+
+2020-09-07 07:12:16,514 DEBUG    root            Reading GCS logfile: 206 (read 650 bytes)
+2020-09-07 07:12:16,514 INFO     ___FILE_ONLY___ Collecting google-cloud-storage>=1.13.0
+  Downloading google_cloud_storage-1.31.0-py2.py3-none-any.whl (88 kB)
+Collecting kubernetes<12.0.0,>=8.0.0
+  Downloading kubernetes-11.0.0-py3-none-any.whl (1.5 MB)
+Requirement already satisfied: google-auth>=1.6.1 in /usr/local/lib/python3.8/site-packages (from kfp->-r requirements.txt (line 4)) (1.21.1)
+Collecting requests_toolbelt>=0.8.0
+  Downloading requests_toolbelt-0.9.1-py2.py3-none-any.whl (54 kB)
+Collecting cloudpickle
+  Downloading cloudpickle-1.6.0-py3-none-any.whl (23 kB)
+Collecting kfp-server-api<2.0.0,>=0.2.5
+  Downloading kfp-server-api-1.0.0.tar.gz (51 kB)
+Collecting jsonschema>=3.0.1
+
+2020-09-07 07:12:17,608 DEBUG    root            Reading GCS logfile: 206 (read 1642 bytes)
+2020-09-07 07:12:17,608 INFO     ___FILE_ONLY___   Downloading jsonschema-3.2.0-py2.py3-none-any.whl (56 kB)
+Collecting tabulate
+  Downloading tabulate-0.8.7-py3-none-any.whl (24 kB)
+Collecting Deprecated
+  Downloading Deprecated-1.2.10-py2.py3-none-any.whl (8.7 kB)
+Collecting strip-hints
+  Downloading strip-hints-0.1.9.tar.gz (30 kB)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /usr/local/lib/python3.8/site-packages (from requests->-r requirements.txt (line 5)) (1.25.10)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.8/site-packages (from requests->-r requirements.txt (line 5)) (2020.6.20)
+Requirement already satisfied: chardet<4,>=3.0.2 in /usr/local/lib/python3.8/site-packages (from requests->-r requirements.txt (line 5)) (3.0.4)
+Requirement already satisfied: idna<3,>=2.5 in /usr/local/lib/python3.8/site-packages (from requests->-r requirements.txt (line 5)) (2.10)
+Collecting MarkupSafe>=0.23
+  Downloading MarkupSafe-1.1.1-cp38-cp38-manylinux1_x86_64.whl (32 kB)
+Collecting google-resumable-media<2.0dev,>=1.0.0
+  Downloading google_resumable_media-1.0.0-py2.py3-none-any.whl (42 kB)
+Collecting google-cloud-core<2.0dev,>=1.4.1
+  Downloading google_cloud_core-1.4.1-py2.py3-none-any.whl (26 kB)
+Collecting requests-oauthlib
+  Downloading requests_oauthlib-1.3.0-py2.py3-none-any.whl (23 kB)
+Requirement already satisfied: six>=1.9.0 in /usr/local/lib/python3.8/site-packages (from kubernetes<12.0.0,>=8.0.0->kfp->-r requirements.txt (line 4)) (1.15.0)
+Collecting python-dateutil>=2.5.3
+  Downloading python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Collecting websocket-client!=0.40.0,!=0.41.*,!=0.42.*,>=0.32.0
+
+2020-09-07 07:12:18,687 DEBUG    root            Reading GCS logfile: 206 (read 1392 bytes)
+2020-09-07 07:12:18,687 INFO     ___FILE_ONLY___   Downloading websocket_client-0.57.0-py2.py3-none-any.whl (200 kB)
+Requirement already satisfied: cachetools<5.0,>=2.0.0 in /usr/local/lib/python3.8/site-packages (from google-auth>=1.6.1->kfp->-r requirements.txt (line 4)) (4.1.1)
+Requirement already satisfied: pyasn1-modules>=0.2.1 in /usr/local/lib/python3.8/site-packages (from google-auth>=1.6.1->kfp->-r requirements.txt (line 4)) (0.2.8)
+Requirement already satisfied: rsa<5,>=3.1.4; python_version >= "3.5" in /usr/local/lib/python3.8/site-packages (from google-auth>=1.6.1->kfp->-r requirements.txt (line 4)) (4.6)
+Collecting pyrsistent>=0.14.0
+  Downloading pyrsistent-0.16.0.tar.gz (108 kB)
+Collecting attrs>=17.4.0
+  Downloading attrs-20.2.0-py2.py3-none-any.whl (48 kB)
+Collecting wrapt<2,>=1.10
+  Downloading wrapt-1.12.1.tar.gz (27 kB)
+Requirement already satisfied: wheel in /usr/local/lib/python3.8/site-packages (from strip-hints->kfp->-r requirements.txt (line 4)) (0.35.1)
+Collecting google-crc32c<2.0dev,>=1.0; python_version >= "3.5"
+  Downloading google_crc32c-1.0.0-cp38-cp38-manylinux2010_x86_64.whl (39 kB)
+Requirement already satisfied: google-api-core<2.0.0dev,>=1.19.0 in /usr/local/lib/python3.8/site-packages (from google-cloud-core<2.0dev,>=1.4.1->google-cloud-storage>=1.13.0->kfp->-r requirements.txt (line 4)) (1.22.2)
+Collecting oauthlib>=3.0.0
+  Downloading oauthlib-3.1.0-py2.py3-none-any.whl (147 kB)
+
+2020-09-07 07:12:19,778 DEBUG    root            Reading GCS logfile: 206 (read 1594 bytes)
+2020-09-07 07:12:19,778 INFO     ___FILE_ONLY___ Requirement already satisfied: pyasn1<0.5.0,>=0.4.6 in /usr/local/lib/python3.8/site-packages (from pyasn1-modules>=0.2.1->google-auth>=1.6.1->kfp->-r requirements.txt (line 4)) (0.4.8)
+Collecting cffi>=1.0.0
+  Downloading cffi-1.14.2-cp38-cp38-manylinux1_x86_64.whl (410 kB)
+Requirement already satisfied: protobuf>=3.12.0 in /usr/local/lib/python3.8/site-packages (from google-api-core<2.0.0dev,>=1.19.0->google-cloud-core<2.0dev,>=1.4.1->google-cloud-storage>=1.13.0->kfp->-r requirements.txt (line 4)) (3.13.0)
+Requirement already satisfied: googleapis-common-protos<2.0dev,>=1.6.0 in /usr/local/lib/python3.8/site-packages (from google-api-core<2.0.0dev,>=1.19.0->google-cloud-core<2.0dev,>=1.4.1->google-cloud-storage>=1.13.0->kfp->-r requirements.txt (line 4)) (1.52.0)
+Requirement already satisfied: pytz in /usr/local/lib/python3.8/site-packages (from google-api-core<2.0.0dev,>=1.19.0->google-cloud-core<2.0dev,>=1.4.1->google-cloud-storage>=1.13.0->kfp->-r requirements.txt (line 4)) (2020.1)
+Collecting pycparser
+  Downloading pycparser-2.20-py2.py3-none-any.whl (112 kB)
+Building wheels for collected packages: kfp, PyYAML, kfp-server-api, strip-hints, pyrsistent, wrapt
+  Building wheel for kfp (setup.py): started
+  Building wheel for kfp (setup.py): finished with status 'done'
+  Created wheel for kfp: filename=kfp-1.0.0-py3-none-any.whl size=159769 sha256=bf0554ff60c1a5b62d915590386d7a916c559bbfdff8d6b9c434b559dc9c713d
+  Stored in directory: /root/.cache/pip/wheels/49/c9/07/ab23cb84075a06cbd591ba779b1fb92f9465505ada8b2d96d1
+  Building wheel for PyYAML (setup.py): started
+
+2020-09-07 07:12:20,854 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:21,928 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:23,013 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:24,097 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:25,193 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:26,275 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:27,365 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:28,456 DEBUG    root            Reading GCS logfile: 206 (read 68 bytes)
+2020-09-07 07:12:28,456 INFO     ___FILE_ONLY___   Building wheel for PyYAML (setup.py): finished with status 'done'
+
+2020-09-07 07:12:29,562 DEBUG    root            Reading GCS logfile: 206 (read 1123 bytes)
+2020-09-07 07:12:29,562 INFO     ___FILE_ONLY___   Created wheel for PyYAML: filename=PyYAML-5.3.1-cp38-cp38-linux_x86_64.whl size=572474 sha256=b762688a583093465bbf06463f785a8d84821bf4624fefa54f7923419e93ba53
+  Stored in directory: /root/.cache/pip/wheels/13/90/db/290ab3a34f2ef0b5a0f89235dc2d40fea83e77de84ed2dc05c
+  Building wheel for kfp-server-api (setup.py): started
+  Building wheel for kfp-server-api (setup.py): finished with status 'done'
+  Created wheel for kfp-server-api: filename=kfp_server_api-1.0.0-py3-none-any.whl size=104112 sha256=d5364a2c98d278c50c34cec3981e064e872e92d3d3f8cfa658c5f680c4b4e172
+  Stored in directory: /root/.cache/pip/wheels/08/3d/f6/fc5bed7de5fa03b4f9bfbf8b45b59cce1e8a125139c587ff22
+  Building wheel for strip-hints (setup.py): started
+  Building wheel for strip-hints (setup.py): finished with status 'done'
+  Created wheel for strip-hints: filename=strip_hints-0.1.9-py2.py3-none-any.whl size=20994 sha256=77ed6e90c5b29d5435683914e3cf55090b88c38352e9210df8aa456e7226a68a
+  Stored in directory: /root/.cache/pip/wheels/aa/9f/db/bac771c1bd21fd8d743499e2717bce24b68aad2cd00639c579
+  Building wheel for pyrsistent (setup.py): started
+
+2020-09-07 07:12:30,652 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:31,747 DEBUG    root            Reading GCS logfile: 206 (read 396 bytes)
+2020-09-07 07:12:31,747 INFO     ___FILE_ONLY___   Building wheel for pyrsistent (setup.py): finished with status 'done'
+  Created wheel for pyrsistent: filename=pyrsistent-0.16.0-cp38-cp38-linux_x86_64.whl size=126683 sha256=f016917140e9037cbfa4721c4fb7e2dd3024e061abc327d98ba8e678dbc44120
+  Stored in directory: /root/.cache/pip/wheels/17/be/0f/727fb20889ada6aaaaba861f5f0eb21663533915429ad43f28
+  Building wheel for wrapt (setup.py): started
+
+2020-09-07 07:12:32,843 DEBUG    root            Reading GCS logfile: 206 (read 828 bytes)
+2020-09-07 07:12:32,843 INFO     ___FILE_ONLY___   Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.12.1-cp38-cp38-linux_x86_64.whl size=81481 sha256=32e1ce4e2012276e77ff8e0c6fab4b997954a233966494f086d4fe3924057e71
+  Stored in directory: /root/.cache/pip/wheels/5f/fd/9e/b6cf5890494cb8ef0b5eaff72e5d55a70fb56316007d6dfe73
+Successfully built kfp PyYAML kfp-server-api strip-hints pyrsistent wrapt
+Installing collected packages: itsdangerous, Werkzeug, MarkupSafe, Jinja2, click, Flask, python-version, gunicorn, PyYAML, pycparser, cffi, google-crc32c, google-resumable-media, google-cloud-core, google-cloud-storage, oauthlib, requests-oauthlib, python-dateutil, websocket-client, kubernetes, requests-toolbelt, cloudpickle, kfp-server-api, pyrsistent, attrs, jsonschema, tabulate, wrapt, Deprecated, strip-hints, kfp
+
+2020-09-07 07:12:33,927 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:35,040 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:36,123 DEBUG    root            Reading GCS logfile: 206 (read 578 bytes)
+2020-09-07 07:12:36,123 INFO     ___FILE_ONLY___ Successfully installed Deprecated-1.2.10 Flask-1.1.1 Jinja2-2.11.2 MarkupSafe-1.1.1 PyYAML-5.3.1 Werkzeug-1.0.1 attrs-20.2.0 cffi-1.14.2 click-7.1.2 cloudpickle-1.6.0 google-cloud-core-1.4.1 google-cloud-storage-1.31.0 google-crc32c-1.0.0 google-resumable-media-1.0.0 gunicorn-20.0.4 itsdangerous-1.1.0 jsonschema-3.2.0 kfp-1.0.0 kfp-server-api-1.0.0 kubernetes-11.0.0 oauthlib-3.1.0 pycparser-2.20 pyrsistent-0.16.0 python-dateutil-2.8.1 python-version-0.0.2 requests-oauthlib-1.3.0 requests-toolbelt-0.9.1 strip-hints-0.1.9 tabulate-0.8.7 websocket-client-0.57.0 wrapt-1.12.1
+
+2020-09-07 07:12:37,210 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:38,294 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:39,409 DEBUG    root            Reading GCS logfile: 206 (read 700 bytes)
+2020-09-07 07:12:39,409 INFO     ___FILE_ONLY___ Removing intermediate container 589a90e44859
+ ---> a12795601335
+Step 8/11 : ENV APP_HOME /app
+ ---> Running in d7ea27b7030a
+Removing intermediate container d7ea27b7030a
+ ---> c3201b9d5130
+Step 9/11 : WORKDIR $APP_HOME
+ ---> Running in 73ec3246157b
+Removing intermediate container 73ec3246157b
+ ---> edd514aaf13c
+Step 10/11 : COPY . ./
+ ---> 6aee890ec69f
+Step 11/11 : CMD exec gunicorn --bind :$PORT --workers 1 --threads 2 cloudrunapp:app
+ ---> Running in 719710e377ab
+Removing intermediate container 719710e377ab
+ ---> 4d51185a65c4
+Successfully built 4d51185a65c4
+Successfully tagged gcr.io/ind-coe/babyweight-pipeline-pipeline:latest
+PUSH
+Pushing gcr.io/ind-coe/babyweight-pipeline-pipeline:latest
+
+2020-09-07 07:12:40,524 DEBUG    root            Reading GCS logfile: 206 (read 702 bytes)
+2020-09-07 07:12:40,524 INFO     ___FILE_ONLY___ The push refers to repository [gcr.io/ind-coe/babyweight-pipeline-pipeline]
+7117ed278daf: Preparing
+6dc0fff2bc96: Preparing
+c6abae1860ed: Preparing
+856a92c35403: Preparing
+31aadfc9af17: Preparing
+2105484f5385: Preparing
+5897906f0dcf: Preparing
+0e8b2d0ea2fd: Preparing
+07a7c171e764: Preparing
+d02f2bc17b1a: Preparing
+c73671c7c011: Preparing
+37239e6313fc: Preparing
+e5df62d9b33a: Preparing
+7a9460d53218: Preparing
+b2765ac0333a: Preparing
+0ced13fcf944: Preparing
+2105484f5385: Waiting
+5897906f0dcf: Waiting
+0e8b2d0ea2fd: Waiting
+07a7c171e764: Waiting
+d02f2bc17b1a: Waiting
+c73671c7c011: Waiting
+37239e6313fc: Waiting
+e5df62d9b33a: Waiting
+7a9460d53218: Waiting
+b2765ac0333a: Waiting
+0ced13fcf944: Waiting
+
+2020-09-07 07:12:41,602 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:42,683 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:43,794 DEBUG    root            Reading GCS logfile: 206 (read 98 bytes)
+2020-09-07 07:12:43,795 INFO     ___FILE_ONLY___ 856a92c35403: Pushed
+7117ed278daf: Pushed
+6dc0fff2bc96: Pushed
+0e8b2d0ea2fd: Layer already exists
+
+2020-09-07 07:12:44,922 DEBUG    root            Reading GCS logfile: 206 (read 35 bytes)
+2020-09-07 07:12:44,923 INFO     ___FILE_ONLY___ 07a7c171e764: Layer already exists
+
+2020-09-07 07:12:46,009 DEBUG    root            Reading GCS logfile: 206 (read 105 bytes)
+2020-09-07 07:12:46,010 INFO     ___FILE_ONLY___ d02f2bc17b1a: Layer already exists
+c73671c7c011: Layer already exists
+37239e6313fc: Layer already exists
+
+2020-09-07 07:12:47,125 DEBUG    root            Reading GCS logfile: 206 (read 105 bytes)
+2020-09-07 07:12:47,125 INFO     ___FILE_ONLY___ e5df62d9b33a: Layer already exists
+7a9460d53218: Layer already exists
+b2765ac0333a: Layer already exists
+
+2020-09-07 07:12:48,233 DEBUG    root            Reading GCS logfile: 206 (read 56 bytes)
+2020-09-07 07:12:48,233 INFO     ___FILE_ONLY___ 0ced13fcf944: Layer already exists
+5897906f0dcf: Pushed
+
+2020-09-07 07:12:49,314 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:50,404 DEBUG    root            Reading GCS logfile: 206 (read 21 bytes)
+2020-09-07 07:12:50,404 INFO     ___FILE_ONLY___ c6abae1860ed: Pushed
+
+2020-09-07 07:12:51,486 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:52,586 DEBUG    root            Reading GCS logfile: 206 (read 21 bytes)
+2020-09-07 07:12:52,587 INFO     ___FILE_ONLY___ 2105484f5385: Pushed
+
+2020-09-07 07:12:53,677 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:54,755 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:55,843 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:56,916 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:57,983 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:12:59,062 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:00,144 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:01,217 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:02,312 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:03,392 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:04,470 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:05,559 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:06,642 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:07,762 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:08,844 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:09,921 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:11,000 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:12,074 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:13,166 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:14,262 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:15,357 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:16,431 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:17,539 DEBUG    root            Reading GCS logfile: 206 (read 21 bytes)
+2020-09-07 07:13:17,539 INFO     ___FILE_ONLY___ 31aadfc9af17: Pushed
+
+2020-09-07 07:13:18,621 DEBUG    root            Reading GCS logfile: 416 (no new content; keep polling)
+2020-09-07 07:13:19,710 DEBUG    root            Reading GCS logfile: 206 (read 99 bytes)
+2020-09-07 07:13:19,710 INFO     ___FILE_ONLY___ latest: digest: sha256:67fceca94eb4570075d1124f6a37bf81e991ba55c9d06ba63b76d7b4f96841f4 size: 3688
+
+2020-09-07 07:13:20,852 DEBUG    root            Reading GCS logfile: 206 (read 5 bytes)
+2020-09-07 07:13:20,852 INFO     ___FILE_ONLY___ DONE
+
+2020-09-07 07:13:20,859 INFO     ___FILE_ONLY___ --------------------------------------------------------------------------------
+
+
+2020-09-07 07:13:20,861 INFO     root            Display format: "
+        table(
+          id,
+          createTime.date('%Y-%m-%dT%H:%M:%S%Oz', undefined='-'),
+          duration(start=startTime,end=finishTime,precision=0,calendar=false,undefined="  -").slice(2:).join(""):label=DURATION,
+          build_source(undefined="-"):label=SOURCE,
+          build_images(undefined="-"):label=IMAGES,
+          status
+        )
+      "
+2020-09-07 07:13:20,870 INFO     ___FILE_ONLY___ ID
+2020-09-07 07:13:20,870 INFO     ___FILE_ONLY___                                     
+2020-09-07 07:13:20,870 INFO     ___FILE_ONLY___ CREATE_TIME
+2020-09-07 07:13:20,870 INFO     ___FILE_ONLY___                 
+2020-09-07 07:13:20,870 INFO     ___FILE_ONLY___ DURATION
+2020-09-07 07:13:20,870 INFO     ___FILE_ONLY___   
+2020-09-07 07:13:20,870 INFO     ___FILE_ONLY___ SOURCE
+2020-09-07 07:13:20,871 INFO     ___FILE_ONLY___                                                                                  
+2020-09-07 07:13:20,871 INFO     ___FILE_ONLY___ IMAGES
+2020-09-07 07:13:20,871 INFO     ___FILE_ONLY___                                                  
+2020-09-07 07:13:20,871 INFO     ___FILE_ONLY___ STATUS
+2020-09-07 07:13:20,871 INFO     ___FILE_ONLY___ 
+
+2020-09-07 07:13:20,871 INFO     ___FILE_ONLY___ 1b94b58a-249a-4452-90c1-c3f158afcdca
+2020-09-07 07:13:20,871 INFO     ___FILE_ONLY___   
+2020-09-07 07:13:20,871 INFO     ___FILE_ONLY___ 2020-09-07T07:10:21+00:00
+2020-09-07 07:13:20,872 INFO     ___FILE_ONLY___   
+2020-09-07 07:13:20,872 INFO     ___FILE_ONLY___ 2M56S
+2020-09-07 07:13:20,872 INFO     ___FILE_ONLY___      
+2020-09-07 07:13:20,872 INFO     ___FILE_ONLY___ gs://ind-coe_cloudbuild/source/1599462620.787677-fc59fe081fe3468c933af98b8a998fbd.tgz
+2020-09-07 07:13:20,872 INFO     ___FILE_ONLY___   
+2020-09-07 07:13:20,872 INFO     ___FILE_ONLY___ gcr.io/ind-coe/babyweight-pipeline-pipeline (+1 more)
+2020-09-07 07:13:20,872 INFO     ___FILE_ONLY___   
+2020-09-07 07:13:20,872 INFO     ___FILE_ONLY___ SUCCESS
+2020-09-07 07:13:20,872 INFO     ___FILE_ONLY___ 
+
+2020-09-07 07:13:20,873 DEBUG    root            SDK update checks are disabled.

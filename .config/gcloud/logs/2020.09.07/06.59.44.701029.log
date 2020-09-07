@@ -1,0 +1,11 @@
+2020-09-07 06:59:44,701 DEBUG    root            Loaded Command Group: ['gcloud', 'auth']
+2020-09-07 06:59:44,704 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'print_access_token']
+2020-09-07 06:59:44,706 DEBUG    root            Running [gcloud.auth.print-access-token] with arguments: []
+2020-09-07 06:59:44,727 DEBUG    google_auth_httplib2 Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/cgmlops@ind-coe.iam.gserviceaccount.com/?recursive=true
+2020-09-07 06:59:44,731 DEBUG    google_auth_httplib2 Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/cgmlops@ind-coe.iam.gserviceaccount.com/token
+2020-09-07 06:59:44,742 DEBUG    google_auth_httplib2 Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/cgmlops@ind-coe.iam.gserviceaccount.com/?recursive=true
+2020-09-07 06:59:44,745 DEBUG    google_auth_httplib2 Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/cgmlops@ind-coe.iam.gserviceaccount.com/token
+2020-09-07 06:59:44,751 INFO     root            Display format: "value(token)"
+2020-09-07 06:59:44,751 INFO     ___FILE_ONLY___ ya29.c.KoAB2wdhEtZ0p-L0BFO-9x7HTHVY8ie5TswMpVwMMlYMaxJIc1fIUc2dHDMLiKZbCusU95_YnuHyIYqOIrMThQXrKQblobuzsXpuQpoGV4t4X5LzRKo_AHLDimN-hneRxYp1es5HfElVMeFYjm1KvRhA4b8hN3itwanFcllxLmWW1-4
+
+2020-09-07 06:59:44,751 DEBUG    root            SDK update checks are disabled.

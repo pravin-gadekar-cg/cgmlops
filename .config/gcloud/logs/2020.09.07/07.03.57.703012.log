@@ -1,0 +1,9 @@
+2020-09-07 07:03:57,705 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2020-09-07 07:03:57,708 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'config_helper']
+2020-09-07 07:03:57,710 DEBUG    root            Running [gcloud.config.config-helper] with arguments: [--format: "value(configuration.properties.core.project)"]
+2020-09-07 07:03:57,729 DEBUG    google_auth_httplib2 Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/cgmlops@ind-coe.iam.gserviceaccount.com/?recursive=true
+2020-09-07 07:03:57,733 DEBUG    google_auth_httplib2 Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/cgmlops@ind-coe.iam.gserviceaccount.com/token
+2020-09-07 07:03:57,752 INFO     root            Display format: "default value(configuration.properties.core.project)"
+2020-09-07 07:03:57,753 INFO     ___FILE_ONLY___ ind-coe
+
+2020-09-07 07:03:57,753 DEBUG    root            SDK update checks are disabled.
