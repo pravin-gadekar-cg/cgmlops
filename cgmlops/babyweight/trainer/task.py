@@ -69,6 +69,8 @@ if __name__ == '__main__':
     # unused args provided by service
     arguments.pop('job_dir', None)
     arguments.pop('job-dir', None)
+    print("Train Steps:",(arguments.pop('train_examples')) / model.BATCH_SIZE))
+    print("Batch Size",model.BATCH_SIZE))
 
     ## assign the arguments to the model variables
     output_dir = arguments.pop('output_dir')

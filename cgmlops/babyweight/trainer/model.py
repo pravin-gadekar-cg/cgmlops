@@ -16,9 +16,9 @@ KEY_COLUMN = 'key'
 DEFAULTS = [[0.0], ['null'], [0.0], ['null'], [0.0], ['nokey']]
 
 # Define some hyperparameters
-TRAIN_STEPS = 10
-EVAL_STEPS = None
-BATCH_SIZE = 512
+TRAIN_STEPS = 1
+EVAL_STEPS = 50000
+BATCH_SIZE = 50000
 NEMBEDS = 3
 NNSIZE = [64, 16, 4]
 

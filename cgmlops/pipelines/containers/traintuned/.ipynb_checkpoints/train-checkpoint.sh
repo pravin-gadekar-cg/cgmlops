@@ -43,9 +43,9 @@ python -m trainer.task \
   --output_dir=${OUTDIR} \
   --eval_steps=1 \
   --nnsize=$NNSIZE \
-  --batch_size=$BATCHSIZE \
+  --batch_size=100000 \
   --nembeds=$NEMBEDS \
-  --train_examples=2000000
+  --train_examples=50000
 
 
 # write output file for next step in pipeline

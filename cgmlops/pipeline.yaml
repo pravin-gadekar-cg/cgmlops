@@ -1,0 +1,172 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: cg-mlops-
+  annotations: {pipelines.kubeflow.org/kfp_sdk_version: 1.0.0, pipelines.kubeflow.org/pipeline_compilation_time: '2020-09-07T15:48:46.930532',
+    pipelines.kubeflow.org/pipeline_spec: '{"description": "CG MlOps Workshop", "inputs":
+      [{"default": "ind-coe", "name": "project", "optional": true}, {"default": "cgmlops-demo",
+      "name": "bucket", "optional": true}, {"default": "2008", "name": "start_year",
+      "optional": true}], "name": "CG - MlOps"}'}
+  labels: {pipelines.kubeflow.org/kfp_sdk_version: 1.0.0}
+spec:
+  entrypoint: cg-mlops
+  templates:
+  - name: cg-mlops
+    inputs:
+      parameters:
+      - {name: bucket}
+      - {name: project}
+      - {name: start_year}
+    dag:
+      tasks:
+      - name: deploy-ai-platform
+        template: deploy-ai-platform
+        dependencies: [traintuned]
+        arguments:
+          parameters:
+          - {name: traintuned-train, value: '{{tasks.traintuned.outputs.parameters.traintuned-train}}'}
+      - name: deployapp
+        template: deployapp
+        dependencies: [deploy-ai-platform]
+        arguments:
+          parameters:
+          - {name: deploy-ai-platform-model, value: '{{tasks.deploy-ai-platform.outputs.parameters.deploy-ai-platform-model}}'}
+          - {name: deploy-ai-platform-version, value: '{{tasks.deploy-ai-platform.outputs.parameters.deploy-ai-platform-version}}'}
+      - name: hypertrain
+        template: hypertrain
+        dependencies: [preprocess]
+        arguments:
+          parameters:
+          - {name: preprocess-bucket, value: '{{tasks.preprocess.outputs.parameters.preprocess-bucket}}'}
+      - name: preprocess
+        template: preprocess
+        arguments:
+          parameters:
+          - {name: bucket, value: '{{inputs.parameters.bucket}}'}
+          - {name: project, value: '{{inputs.parameters.project}}'}
+          - {name: start_year, value: '{{inputs.parameters.start_year}}'}
+      - name: traintuned
+        template: traintuned
+        dependencies: [hypertrain, preprocess]
+        arguments:
+          parameters:
+          - {name: hypertrain-jobname, value: '{{tasks.hypertrain.outputs.parameters.hypertrain-jobname}}'}
+          - {name: preprocess-bucket, value: '{{tasks.preprocess.outputs.parameters.preprocess-bucket}}'}
+  - name: deploy-ai-platform
+    container:
+      args: ['{{inputs.parameters.traintuned-train}}', babyweight, mlp]
+      env:
+      - {name: GOOGLE_APPLICATION_CREDENTIALS, value: /secret/gcp-credentials/user-gcp-sa.json}
+      - {name: CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE, value: /secret/gcp-credentials/user-gcp-sa.json}
+      image: gcr.io/ind-coe/babyweight-pipeline-deploycmle:latest
+      volumeMounts:
+      - {mountPath: /secret/gcp-credentials, name: gcp-credentials-user-gcp-sa}
+    inputs:
+      parameters:
+      - {name: traintuned-train}
+    outputs:
+      parameters:
+      - name: deploy-ai-platform-model
+        valueFrom: {path: /model.txt}
+      - name: deploy-ai-platform-version
+        valueFrom: {path: /version.txt}
+      artifacts:
+      - {name: deploy-ai-platform-model, path: /model.txt}
+      - {name: deploy-ai-platform-version, path: /version.txt}
+    volumes:
+    - name: gcp-credentials-user-gcp-sa
+      secret: {secretName: user-gcp-sa}
+  - name: deployapp
+    container:
+      args: ['{{inputs.parameters.deploy-ai-platform-model}}', '{{inputs.parameters.deploy-ai-platform-version}}']
+      env:
+      - {name: GOOGLE_APPLICATION_CREDENTIALS, value: /secret/gcp-credentials/user-gcp-sa.json}
+      - {name: CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE, value: /secret/gcp-credentials/user-gcp-sa.json}
+      image: gcr.io/ind-coe/babyweight-pipeline-deployapp:latest
+      volumeMounts:
+      - {mountPath: /secret/gcp-credentials, name: gcp-credentials-user-gcp-sa}
+    inputs:
+      parameters:
+      - {name: deploy-ai-platform-model}
+      - {name: deploy-ai-platform-version}
+    outputs:
+      artifacts:
+      - {name: deployapp-appurl, path: /appurl.txt}
+    volumes:
+    - name: gcp-credentials-user-gcp-sa
+      secret: {secretName: user-gcp-sa}
+  - name: hypertrain
+    container:
+      args: ['{{inputs.parameters.preprocess-bucket}}']
+      env:
+      - {name: GOOGLE_APPLICATION_CREDENTIALS, value: /secret/gcp-credentials/user-gcp-sa.json}
+      - {name: CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE, value: /secret/gcp-credentials/user-gcp-sa.json}
+      image: gcr.io/ind-coe/babyweight-pipeline-hypertrain:latest
+      volumeMounts:
+      - {mountPath: /secret/gcp-credentials, name: gcp-credentials-user-gcp-sa}
+    inputs:
+      parameters:
+      - {name: preprocess-bucket}
+    outputs:
+      parameters:
+      - name: hypertrain-jobname
+        valueFrom: {path: /output.txt}
+      artifacts:
+      - {name: hypertrain-jobname, path: /output.txt}
+    volumes:
+    - name: gcp-credentials-user-gcp-sa
+      secret: {secretName: user-gcp-sa}
+  - name: preprocess
+    container:
+      args: [--project, '{{inputs.parameters.project}}', --mode, cloud, --bucket,
+        '{{inputs.parameters.bucket}}', --start_year, '{{inputs.parameters.start_year}}']
+      env:
+      - {name: GOOGLE_APPLICATION_CREDENTIALS, value: /secret/gcp-credentials/user-gcp-sa.json}
+      - {name: CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE, value: /secret/gcp-credentials/user-gcp-sa.json}
+      image: gcr.io/ind-coe/babyweight-pipeline-bqtocsv:latest
+      volumeMounts:
+      - {mountPath: /secret/gcp-credentials, name: gcp-credentials-user-gcp-sa}
+    inputs:
+      parameters:
+      - {name: bucket}
+      - {name: project}
+      - {name: start_year}
+    outputs:
+      parameters:
+      - name: preprocess-bucket
+        valueFrom: {path: /output.txt}
+      artifacts:
+      - {name: preprocess-bucket, path: /output.txt}
+    volumes:
+    - name: gcp-credentials-user-gcp-sa
+      secret: {secretName: user-gcp-sa}
+  - name: traintuned
+    container:
+      args: ['{{inputs.parameters.hypertrain-jobname}}', '{{inputs.parameters.preprocess-bucket}}']
+      env:
+      - {name: GOOGLE_APPLICATION_CREDENTIALS, value: /secret/gcp-credentials/user-gcp-sa.json}
+      - {name: CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE, value: /secret/gcp-credentials/user-gcp-sa.json}
+      image: gcr.io/ind-coe/babyweight-pipeline-traintuned:latest
+      resources:
+        requests: {memory: 2G, cpu: '1'}
+      volumeMounts:
+      - {mountPath: /secret/gcp-credentials, name: gcp-credentials-user-gcp-sa}
+    inputs:
+      parameters:
+      - {name: hypertrain-jobname}
+      - {name: preprocess-bucket}
+    outputs:
+      parameters:
+      - name: traintuned-train
+        valueFrom: {path: /output.txt}
+      artifacts:
+      - {name: traintuned-train, path: /output.txt}
+    volumes:
+    - name: gcp-credentials-user-gcp-sa
+      secret: {secretName: user-gcp-sa}
+  arguments:
+    parameters:
+    - {name: project, value: ind-coe}
+    - {name: bucket, value: cgmlops-demo}
+    - {name: start_year, value: '2008'}
+  serviceAccountName: pipeline-runner

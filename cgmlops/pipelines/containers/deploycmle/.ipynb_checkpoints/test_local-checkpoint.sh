@@ -13,18 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if [ "$#" -ne 1 ]; then
-    echo "Usage: ./2_deploy_cloudfunction.sh   cloudrun_url"
-    echo "  eg:  ./2_deploy_cloudfunction.sh  https://kfpdemo-cbacefeq2a-uc.a.run.app"
-    exit
-fi
+PROJECT_ID=$(gcloud config config-helper --format "value(configuration.properties.core.project)")
+BUCKET="${PROJECT_ID}-kfpdemo"
 
+../build_container.sh
 
-PROJECT=$(gcloud config get-value project)
-BUCKET="cgmlops-demo"
-CLOUDRUN_URL=$1
-
-# Deploy Cloud Functions to monitor the bucket and invoke Cloud Run
-gcloud functions deploy handle_newfile --runtime python37 \
-    --set-env-vars DESTINATION_URL=${CLOUDRUN_URL} \
-    --trigger-resource=${BUCKET} --trigger-event=google.storage.object.finalize
+docker run -t gcr.io/${PROJECT_ID}/babyweight-pipeline-deploycmle:latest \
+       gs://${BUCKET}/babyweight/hyperparam/17 babyweight local
